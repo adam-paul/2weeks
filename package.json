@@ -1,5 +1,14 @@
 {
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "bun run server.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
   }
 }

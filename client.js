@@ -14,7 +14,8 @@ function addMessage(message) {
 
 function connect() {
   let wasConnected = false;
-  socket = new WebSocket('ws://localhost:8080');
+  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+  socket = new WebSocket(`${protocol}//${window.location.host}/ws`);
 
   socket.addEventListener('open', () => {
     wasConnected = true;
