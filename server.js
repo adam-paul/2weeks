@@ -5,9 +5,8 @@ const server = new WebSocketServer({ port: 8080 });
 function broadcastToAll(message) {
   server.clients.forEach(client => {
     if (client.readyState === WebSocket.OPEN) {
-      console.log('Sending receipt...');
       client.send(message);
-      console.log('Receipt sent.');
+      console.log('Message published.');
     }
   });
 }

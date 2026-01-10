@@ -17,11 +17,17 @@ function connect() {
   const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   socket = new WebSocket(`${protocol}//${window.location.host}/ws`);
 
+  statusElement.textContent = "Connecting to the server...";
+  connectButton.textContent = "Connecting...";
+  sendButton.disabled = true;
+  connectButton.disabled = true;
+
   socket.addEventListener('open', () => {
     wasConnected = true;
     statusElement.textContent = "You are connected to the server.";
     sendButton.disabled = false;
     connectButton.textContent = "Disconnect";
+    connectButton.disabled = false;
   });
 
   socket.addEventListener('message', (event) => {
@@ -32,6 +38,7 @@ function connect() {
     statusElement.textContent = "You are disconnected from the server.";
     sendButton.disabled = true;
     connectButton.textContent = "Connect";
+    connectButton.disabled = false;
 
     if (wasConnected) {
       addMessage("You have been disconnected from the server.");
