@@ -19,6 +19,8 @@ jobs:
           script: |
             cd /var/www/2weeks
             git pull origin master
-            bun install --production
+            bun install
+            bun run build
+            systemctl restart sveltekit-app
             systemctl restart websocket-server
             echo "Deploy complete: $(git log -1 --pretty=format:'%h - %s')"
