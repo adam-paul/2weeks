@@ -59,7 +59,7 @@ server.on('connection', (ws, request) => {
 	});
 
 	broadcastToOthers(socket, {
-		type: 'user_joined',
+		type: 'user_connected',
 		clientId: socket.clientId
 	});
 
@@ -86,7 +86,7 @@ server.on('connection', (ws, request) => {
 	socket.on('close', () => {
 		console.log(`Client disconnected: ${socket.clientId}.`);
 		broadcastToOthers(socket, {
-			type: 'user_left',
+			type: 'user_disconnected',
 			clientId: socket.clientId
 		});
 	});

@@ -17,11 +17,11 @@
 			case 'system':
 				messages.push(msg.content);
 				break;
-			case 'user_joined':
-				messages.push(`${msg.clientId} has joined.`);
+			case 'user_connected':
+				messages.push(`${msg.clientId} has connected.`);
 				break;
-			case 'user_left':
-				messages.push(`${msg.clientId} has left.`);
+			case 'user_disconnected':
+				messages.push(`${msg.clientId} has disconnected.`);
 				break;
 		}
 	}
