@@ -1,5 +1,5 @@
 import { WebSocketServer, WebSocket } from 'ws';
-import type { ClientMessage, ServerMessage } from '../src/lib/types/websocket.js';
+import type { ClientMessage, ServerMessage } from '../src/lib/types.js';
 
 // === Configuration ===
 const PORT = 8080;

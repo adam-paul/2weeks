@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { ClientMessage, ServerMessage } from '$lib/types/websocket.js';
+	import type { ClientMessage, ServerMessage } from '$lib/types.js';
 
 	let socket: WebSocket | null = null;
 	let connectionState = $state<'disconnected' | 'connecting' | 'connected'>('disconnected');
